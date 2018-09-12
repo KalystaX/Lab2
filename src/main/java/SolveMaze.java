@@ -39,10 +39,14 @@ public class SolveMaze {
                 move();
             }
             while (isFinished() == false) {
-                if (canMove == false):{
+                if (canMove() == false):{
                     turnRight();
                 } else {
-                    move()
+                    move();
+                    break;
+                }
+                while (isFinished() == false) {
+                    move();
                 }
             }
         }
